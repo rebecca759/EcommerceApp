@@ -19,6 +19,7 @@ const Left = styled.div`
     flex:1;
     display:flex;
     align-items:center;
+    margin-left:25px;
 `
 const Center = styled.div`
     flex:1;
@@ -61,6 +62,7 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
+            
                 <Left>
                     <Language>EN</Language>
                     <SearchContainer>

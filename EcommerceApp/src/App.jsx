@@ -8,9 +8,11 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import "./app.css"
 import { useSelector } from "react-redux";
+import useAlan from "./hooks/useAlan"
+
 
 const App = () => {
-  // useAlan()
+   useAlan()
   const user = useSelector(function(state) {
     console.log(state);
     return state?.user?.currentUser
