@@ -55,24 +55,24 @@ const Icon = styled.div`
 `
 
 const Product = ({item}) => {
-    const src = '../'+item.img
+    console.log(item)
     return (
-        <Link to={`/product/${item.id}`}>
         <Container>
-            <Image src={src}/>
+            <Image src={item.img}/>
             <Info>
                 <Icon>
                     <ShoppingCartOutlined className="link"/>
                 </Icon>
                 <Icon>
+                    <Link to={`/product/${item._id}`}>
                     <SearchOutlined className="link"/>
+                    </Link>
                 </Icon>
                 <Icon>
                     <FavoriteBorderOutlined className="link"/>
                 </Icon>
             </Info>
         </Container>
-        </Link>
         
     )
 }

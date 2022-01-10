@@ -7,10 +7,14 @@ import Cart from "./pages/Cart"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import "./app.css"
-import useAlan from "./hooks/useAlan"
+import { useSelector } from "react-redux";
+
 const App = () => {
-  useAlan()
-  
+  // useAlan()
+  const user = useSelector(function(state) {
+    console.log(state);
+    return state?.user?.currentUser
+  });
   return (
     <Router>
       <Navbar/>
@@ -28,10 +32,10 @@ const App = () => {
           <Cart/>
         </Route>
         <Route path="/login">
-          <Login/>
+        {user ? <Redirect to="/" /> : <Login />}
         </Route>
-        <Route exact path="/register">
-          <Register/>
+        <Route path="/register">
+        {user ? <Redirect to="/" /> : <Register />}
         </Route>
       </Switch>
     </Router>
